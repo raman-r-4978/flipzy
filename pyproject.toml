@@ -1,0 +1,27 @@
+[project]
+name = "flipzy"
+version = "0.1.0"
+description = "Flipzy - A spaced repetition app for learning English vocabulary and phrases"
+authors = [
+    {name = "raman",email = "raman.r@zohocorp.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "streamlit (>=1.51.0,<2.0.0)",
+    "pydantic (>=2.12.3,<3.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "pages", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "black (>=25.9.0,<26.0.0)",
+    "isort (>=7.0.0,<8.0.0)",
+    "ruff (>=0.14.3,<0.15.0)"
+]
