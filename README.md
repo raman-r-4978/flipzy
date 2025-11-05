@@ -22,23 +22,22 @@ A powerful spaced repetition system built with Python, Poetry, and Streamlit to 
 
 1. **Install Poetry** (if not already installed):
    ```bash
-   curl -sSL https://install.python-poetry.org | python3 -
+   > curl -sSL https://install.python-poetry.org | python3 -
    ```
 
 2. **Install dependencies**:
    ```bash
-   poetry install
+   > poetry install
    ```
 
 3. **Run the app**:
    ```bash
-   poetry run streamlit run app.py
+   > poetry run streamlit run app.py
    ```
-
-   Or activate the virtual environment first:
+   Or
    ```bash
-   poetry shell
-   streamlit run app.py
+   > conda activate env
+   > streamlit run app.py
    ```
 
 The app will open in your browser at `http://localhost:8501`
@@ -104,13 +103,30 @@ The app uses the **SM-2 algorithm** (SuperMemo 2), which:
 ## 📁 Project Structure
 
 ```
-learning-english/
-├── app.py                    # Main Streamlit application
-├── spaced_repetition.py      # SM-2 algorithm implementation
-├── storage.py                # Data persistence layer
-├── pyproject.toml            # Poetry configuration
-├── vocabulary_cards.json      # Data storage (created automatically)
-└── README.md                 # This file
+flipzy/
+├── app.py                       # Main Streamlit application
+├── data                         # Data storage (created automatically)
+│   ├── backups
+│   └── vocabulary_cards.json
+├── format.py
+├── LICENSE
+├── poetry.lock
+├── pyproject.toml               # Poetry configuration
+├── README.md                    # This file
+├── run.sh                       # Script to start the application
+└── src
+    ├── config.py
+    ├── __init__.py
+    ├── pages
+    │   ├── add_vocabulary.py
+    │   ├── home.py
+    │   ├── __init__.py
+    │   ├── manage_cards.py
+    │   ├── review.py
+    │   └── statistics.py
+    ├── sidebar.py
+    ├── spaced_repetition.py     # SM-2 algorithm implementation
+    └── storage.py               # Data persistence layer
 ```
 
 ## 🔧 Technical Details
@@ -118,7 +134,7 @@ learning-english/
 - **Framework**: Streamlit
 - **Algorithm**: SM-2 (SuperMemo 2)
 - **Storage**: JSON file (vocabulary_cards.json)
-- **Python Version**: 3.8+
+- **Python Version**: 3.10+
 
 ## 📝 License
 
