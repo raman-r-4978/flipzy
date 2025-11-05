@@ -3,9 +3,9 @@ Flipzy - Spaced Repetition App
 A Streamlit app to help learn English vocabulary and phrases
 """
 import streamlit as st
+from src.spaced_repetition import SpacedRepetition
 from src.config import configure_page, initialize_session_state
 from src.sidebar import render_sidebar
-from src.spaced_repetition import SpacedRepetition
 from src.pages import (
     show_home,
     show_add_vocabulary,
@@ -19,7 +19,6 @@ def main():
     """Main application entry point"""
     st.title("📚 Flipzy")
     st.markdown("---")
-    
     storage = st.session_state.storage
     sr = SpacedRepetition()
     cards = storage.load_cards()

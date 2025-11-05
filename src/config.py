@@ -1,17 +1,13 @@
 """
 Configuration and session state initialization
 """
-
 import streamlit as st
-
 from .storage import Storage
 
 
 def configure_page():
     """Configure Streamlit page settings"""
-    st.set_page_config(
-        page_title="Flipzy", page_icon="📚", layout="wide", initial_sidebar_state="expanded"
-    )
+    st.set_page_config(page_title="Flipzy",page_icon="📚",layout="wide",initial_sidebar_state="expanded")
 
 
 def initialize_session_state():
